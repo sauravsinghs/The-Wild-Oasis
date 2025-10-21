@@ -1,10 +1,8 @@
-# The Wild Oasis
+# The Wild Oasis Admin
 
-The Wild Oasis is a modern hotel management dashboard for boutique hospitality businesses. It gives staff a single place to manage bookings, check guests in and out, monitor daily activity, update cabin information, and keep hotel settings in sync.
+The Wild Oasis is a hotel management dashboard for staff. It provides the operational side of the Wild Oasis product: monitoring bookings, managing cabins and settings, and handling guest check-in and check-out.
 
-The app is designed to feel like a real-world operational admin tool: fast, structured, and focused on day-to-day hotel workflows.
-
-## What the app does
+## Features
 
 - Dashboard overview with recent bookings, occupancy stats, sales trends, and stay duration analytics
 - Booking management with list views, detail pages, filters, sorting, and quick actions
@@ -12,27 +10,11 @@ The app is designed to feel like a real-world operational admin tool: fast, stru
 - Cabin inventory management for creating, editing, and removing cabin records
 - Hotel settings management for business rules and pricing controls
 - User authentication and account updates with a protected app experience
-- Dark mode support and responsive, polished admin UI
+- Responsive layout with dark mode
 
-## How it works
+## Relationship to the website
 
-The app is built as a React front-end with a protected routing structure:
-
-- Users log in with Supabase authentication before accessing the dashboard
-- Protected routes guard the main hotel management screens
-- React Query handles fetching, caching, and mutation state for bookings, cabins, settings, and user data
-- Supabase provides the backend database and authentication layer for live app data
-- Styled Components deliver the custom design system and layout styling
-- Toast notifications and forms keep the interface responsive and user-friendly
-
-The app is organized around real hotel operations:
-
-- Dashboard for business monitoring
-- Bookings screen for full reservation lifecycle management
-- Cabins screen for inventory and sales configuration
-- Settings screen for hotel operational values
-- Account screen for updating profile details and password
-- Users section for staff/admin management
+The companion `the-wild-oasis-website` project is the guest-facing booking website. This app is the private staff dashboard. They are separate front ends that use the same Supabase project and data model, so reservations made on the website can be managed here. Neither app imports code from the other or serves as the other's API.
 
 ## Tech stack
 
@@ -42,39 +24,28 @@ The app is organized around real hotel operations:
 - React Query for server state management and caching
 - Supabase for authentication and database access
 - Styled Components for component styling and design system patterns
-- React Hook Form for form handling and validation
-- Recharts for dashboard visualizations
-- date-fns for date manipulation and formatting
-- React Hot Toast for notifications
-- React Icons for iconography
-
-## Project structure
-
-- src/pages — main application screens
-- src/features — domain-specific feature logic and UI
-- src/ui — shared design system components and layouts
-- src/services — API integrations and Supabase calls
-- src/context — global app context such as dark mode
-- src/styles — global styling and theme values
+- React Hook Form, Recharts, date-fns, React Hot Toast, and React Icons
 
 ## Getting started
 
 1. Install dependencies:
 
+   ```bash
    npm install
+   ```
 
-2. Run the development server:
+2. Create `.env.local` from `.env.example` and provide the Supabase URL and key.
 
+3. Start the development server:
+
+   ```bash
    npm run dev
+   ```
 
-3. Build for production:
+4. Create a production build when needed:
 
+   ```bash
    npm run build
+   ```
 
-## Production build
-
-The project uses Vite and can be deployed as a static React app. It is configured for a front-end app backed by Supabase data and auth.
-
-## About this repo
-
-This repository is a complete hotel management admin app for a small luxury resort brand. It demonstrates production-style React patterns, real-world data flows, and a polished dashboard experience for managing day-to-day operations in hospitality.
+The app uses Vite environment variables named `VITE_SUPABASE_URL` and `VITE_SUPABASE_KEY`. Do not commit local environment files or credentials.
