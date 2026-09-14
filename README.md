@@ -14,7 +14,7 @@ The Wild Oasis is a hotel management dashboard for staff. It provides the operat
 
 ## Relationship to the website
 
-The companion `the-wild-oasis-website` project is the guest-facing booking website. This app is the private staff dashboard. They are separate front ends that use the same Supabase project and data model, so reservations made on the website can be managed here. Neither app imports code from the other or serves as the other's API.
+The companion <a href="https://github.com/sauravsinghs/The-Wild-Oasis-Website" target="_blank" rel="noopener noreferrer">the-wild-oasis-website</a> project is the guest-facing booking website. This app is the private staff dashboard. They are separate front ends that use the same Supabase project and data model, so reservations made on the website can be managed here. Neither app imports code from the other or serves as the other's API.
 
 ## Tech stack
 
